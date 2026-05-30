@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+data/*.json
+data/*.log
+uploads/resumes/*
+uploads/jds/*
+!uploads/resumes/.gitkeep
+!uploads/jds/.gitkeep
+npm-debug.log*
