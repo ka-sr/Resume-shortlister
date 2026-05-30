@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resume Shortlister - Project Documentation</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 18mm;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: #1d2528;
+        background: #ffffff;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11.5pt;
+        line-height: 1.55;
+      }
+
+      .cover {
+        padding: 20px 0 18px;
+        border-bottom: 3px solid #1e6f64;
+      }
+
+      .eyebrow {
+        margin: 0 0 8px;
+        color: #1e6f64;
+        font-size: 10pt;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0 0 10px;
+        color: #142422;
+        font-size: 28pt;
+        line-height: 1.08;
+      }
+
+      .subtitle {
+        max-width: 680px;
+        margin: 0;
+        color: #53615f;
+        font-size: 12.5pt;
+      }
+
+      h2 {
+        margin: 28px 0 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #d6e1de;
+        color: #142422;
+        font-size: 16pt;
+      }
+
+      h3 {
+        margin: 18px 0 8px;
+        color: #243735;
+        font-size: 12.5pt;
+      }
+
+      p {
+        margin: 0 0 9px;
+      }
+
+      ul {
+        margin: 6px 0 10px 20px;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 5px;
+      }
+
+      code {
+        padding: 1px 4px;
+        border-radius: 4px;
+        background: #eef5f3;
+        color: #1f4f49;
+        font-family: Consolas, "Courier New", monospace;
+        font-size: 10pt;
+      }
+
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin: 18px 0 4px;
+      }
+
+      .info-card {
+        min-height: 76px;
+        padding: 12px;
+        border: 1px solid #d6e1de;
+        border-radius: 8px;
+        background: #f8fbfa;
+      }
+
+      .info-card span {
+        display: block;
+        margin-bottom: 5px;
+        color: #697773;
+        font-size: 9.5pt;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .info-card strong,
+      .info-card a {
+        color: #1d2d2a;
+        font-weight: 700;
+        word-break: break-word;
+      }
+
+      .note {
+        margin: 12px 0;
+        padding: 12px;
+        border-left: 4px solid #1e6f64;
+        background: #f3faf8;
+      }
+
+      .warning {
+        border-left-color: #bd7a20;
+        background: #fff7e8;
+      }
+
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 8px 0 12px;
+      }
+
+      .table th,
+      .table td {
+        padding: 9px;
+        border: 1px solid #d6e1de;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .table th {
+        background: #eef5f3;
+        color: #1f3431;
+      }
+
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 8px;
+        margin: 10px 0 14px;
+      }
+
+      .flow div {
+        min-height: 54px;
+        padding: 9px;
+        border-radius: 8px;
+        background: #1e6f64;
+        color: #ffffff;
+        font-size: 10pt;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .page-break {
+        break-before: page;
+      }
+
+      .footer {
+        margin-top: 28px;
+        padding-top: 10px;
+        border-top: 1px solid #d6e1de;
+        color: #66736f;
+        font-size: 9.5pt;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="cover">
+      <p class="eyebrow">Full Stack Intern Task Submission</p>
+      <h1>Resume Shortlister</h1>
+      <p class="subtitle">
+        A full-stack resume screening and candidate ranking web application that compares uploaded
+        resumes with a job description, generates a match score, and displays ranked candidates for
+        faster HR screening.
+      </p>
+    </section>
+
+    <section class="info-grid">
+      <div class="info-card">
+        <span>Candidate</span>
+        <strong>Kamal Bhagat</strong>
+      </div>
+      <div class="info-card">
+        <span>Project Type</span>
+        <strong>Full-stack web application</strong>
+      </div>
+      <div class="info-card">
+        <span>GitHub Repository</span>
+        <a href="https://github.com/ka-sr/Resume-shortlister">github.com/ka-sr/Resume-shortlister</a>
+      </div>
+      <div class="info-card">
+        <span>Live Application URL</span>
+        <strong>Add Render deployment URL here</strong>
+      </div>
+    </section>
+
+    <h2>1. Project Objective</h2>
+    <p>
+      The objective of this project is to simplify the initial HR screening process. Recruiters can
+      upload one or more resumes, provide a job description, and get a ranked candidate list based on
+      suitability for the role.
+    </p>
+
+    <div class="flow">
+      <div>Upload Resumes</div>
+      <div>Add Job Description</div>
+      <div>Extract Text</div>
+      <div>Score Candidates</div>
+      <div>Show Ranking</div>
+    </div>
+
+    <h2>2. Key Features</h2>
+    <ul>
+      <li>Multiple resume upload support for PDF, DOC, and DOCX files.</li>
+      <li>Job description can be entered manually or uploaded as a document.</li>
+      <li>Resume and JD text extraction using backend parsers.</li>
+      <li>Candidate match score from 0 to 100.</li>
+      <li>Ranking from highest score to lowest score.</li>
+      <li>Candidate name, contact details, resume preview, score, rank, matching skills, and missing skills.</li>
+      <li>Search and sort candidates from the dashboard.</li>
+      <li>CSV export for spreadsheet review.</li>
+      <li>Responsive UI with upload progress and score badges.</li>
+      <li>Automated tests for scoring, ranking, name extraction, and contact extraction.</li>
+    </ul>
+
+    <h2>3. Tech Stack</h2>
+    <table class="table">
+      <tr>
+        <th>Layer</th>
+        <th>Technology</th>
+      </tr>
+      <tr>
+        <td>Frontend</td>
+        <td>React, Vite, CSS, Lucide icons</td>
+      </tr>
+      <tr>
+        <td>Backend</td>
+        <td>Node.js, Express.js</td>
+      </tr>
+      <tr>
+        <td>File Upload</td>
+        <td>Multer</td>
+      </tr>
+      <tr>
+        <td>Parsing</td>
+        <td>pdf-parse for PDF, Mammoth for DOCX, best-effort text fallback for DOC</td>
+      </tr>
+      <tr>
+        <td>Storage</td>
+        <td>Local JSON by default, optional PostgreSQL through DATABASE_URL</td>
+      </tr>
+      <tr>
+        <td>Testing</td>
+        <td>Node.js built-in test runner</td>
+      </tr>
+      <tr>
+        <td>Deployment</td>
+        <td>Render-ready using render.yaml</td>
+      </tr>
+    </table>
+
+    <h2>4. Architecture Overview</h2>
+    <p>
+      The application follows a simple client-server architecture. The React frontend handles the
+      upload workflow, dashboard, sorting, searching, previews, and CSV export. The Express backend
+      receives uploaded files, extracts text, applies scoring logic, ranks candidates, and stores the
+      analysis run.
+    </p>
+
+    <table class="table">
+      <tr>
+        <th>File / Folder</th>
+        <th>Purpose</th>
+      </tr>
+      <tr>
+        <td><code>src/App.jsx</code></td>
+        <td>Main React dashboard and upload workflow.</td>
+      </tr>
+      <tr>
+        <td><code>src/styles.css</code></td>
+        <td>Responsive UI styling, cards, score badges, upload progress, and preview layout.</td>
+      </tr>
+      <tr>
+        <td><code>server/index.js</code></td>
+        <td>Express API, upload handling, analysis endpoint, static frontend serving.</td>
+      </tr>
+      <tr>
+        <td><code>server/textExtraction.js</code></td>
+        <td>Extracts text from PDF, DOCX, DOC, and TXT files.</td>
+      </tr>
+      <tr>
+        <td><code>server/scoring.js</code></td>
+        <td>Skill extraction, keyword extraction, contact extraction, and score calculation.</td>
+      </tr>
+      <tr>
+        <td><code>server/ranking.js</code></td>
+        <td>Sorts candidates by score and assigns rank.</td>
+      </tr>
+      <tr>
+        <td><code>server/db/store.js</code></td>
+        <td>Stores analysis history locally or in PostgreSQL.</td>
+      </tr>
+      <tr>
+        <td><code>tests/scoring.test.js</code></td>
+        <td>Automated tests for scoring and ranking behavior.</td>
+      </tr>
+    </table>
+
+    <h2 class="page-break">5. Candidate Scoring Approach</h2>
+    <p>
+      The project uses a deterministic scoring approach so the result is explainable and easy to
+      review. The scoring model compares each resume against the job description across multiple
+      factors.
+    </p>
+
+    <table class="table">
+      <tr>
+        <th>Factor</th>
+        <th>Weight</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>Skills Match</td>
+        <td>45 points</td>
+        <td>Checks how many required JD skills are present in the resume.</td>
+      </tr>
+      <tr>
+        <td>Keyword Similarity</td>
+        <td>25 points</td>
+        <td>Compares important keywords from the JD with resume keywords.</td>
+      </tr>
+      <tr>
+        <td>Experience Relevance</td>
+        <td>15 points</td>
+        <td>Compares required years of experience with detected resume experience.</td>
+      </tr>
+      <tr>
+        <td>Education Alignment</td>
+        <td>10 points</td>
+        <td>Checks education terms such as degree, bachelor, engineering, masters, etc.</td>
+      </tr>
+      <tr>
+        <td>Role Fit</td>
+        <td>5 points</td>
+        <td>Checks title and role-specific keywords for additional relevance.</td>
+      </tr>
+    </table>
+
+    <p>
+      Final score is capped between 0 and 100. Candidates are ranked by score in descending order. If
+      two candidates have the same score, names are used as a tie-breaker for stable ordering.
+    </p>
+
+    <h2>6. Testing</h2>
+    <p>
+      The project includes automated tests to improve reliability and make the submission more
+      professional. The test command is:
+    </p>
+    <p><code>npm test</code></p>
+    <ul>
+      <li>Skill extraction test.</li>
+      <li>Relevant resume scoring test.</li>
+      <li>Weak resume scoring test.</li>
+      <li>Candidate ranking order test.</li>
+      <li>Candidate name and contact extraction test.</li>
+    </ul>
+
+    <h2>7. Setup Instructions</h2>
+    <p>Install dependencies and run the development app:</p>
+    <p><code>npm install</code></p>
+    <p><code>npm run dev</code></p>
+    <p>Frontend: <code>http://127.0.0.1:5173</code></p>
+    <p>API: <code>http://127.0.0.1:4000</code></p>
+
+    <h3>Production Run</h3>
+    <p><code>npm run build</code></p>
+    <p><code>npm start</code></p>
+
+    <h2>8. Deployment</h2>
+    <p>
+      The project is ready for Render deployment. A <code>render.yaml</code> file is included with the
+      build command, start command, free plan, and health check path.
+    </p>
+    <ul>
+      <li>Build command: <code>npm ci && npm run build</code></li>
+      <li>Start command: <code>npm start</code></li>
+      <li>Health check: <code>/api/health</code></li>
+    </ul>
+
+    <div class="note warning">
+      <strong>Note:</strong> Please replace "Add Render deployment URL here" with the final live URL
+      after Render deployment is complete.
+    </div>
+
+    <h2>9. Assumptions and Limitations</h2>
+    <ul>
+      <li>Candidate name is detected from the first clean person-like line, otherwise filename is used.</li>
+      <li>DOCX and PDF parsing are more accurate than legacy DOC parsing.</li>
+      <li>CSV export is used because Excel can open CSV files directly.</li>
+      <li>Uploaded files are stored on the server filesystem. For production, persistent object storage is recommended.</li>
+      <li>The current scoring is rule-based and explainable. It can be upgraded later with AI/LLM scoring if needed.</li>
+    </ul>
+
+    <h2>10. Future Improvements</h2>
+    <ul>
+      <li>Add authentication for recruiter/admin access.</li>
+      <li>Add persistent cloud file storage such as S3 or Cloudinary.</li>
+      <li>Add Excel XLSX export.</li>
+      <li>Add AI-based semantic scoring as an optional mode.</li>
+      <li>Add detailed history page for previous screening runs.</li>
+    </ul>
+
+    <div class="footer">
+      Prepared for Full Stack Intern Task Submission - Resume Shortlister.
+    </div>
+  </body>
+</html>
