@@ -1,11 +1,12 @@
 services:
   - type: web
     name: resume-shortlister
-    env: node
+    runtime: node
+    plan: free
     buildCommand: npm ci && npm run build
     startCommand: npm start
     healthCheckPath: /api/health
-    autoDeploy: true
+    autoDeployTrigger: commit
     envVars:
       - key: NODE_ENV
         value: production
